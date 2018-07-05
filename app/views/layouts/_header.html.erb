@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Student Evolution</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarContent">
+	  <ul class="nav navbar-nav ml-auto">
+	  	<% if current_user %>
+	      <li class="nav-item" ng-if="auth">
+	        <%= link_to "Perfil", edit_user_registration_path, class: "nav-link" %>
+	      </li>
+	      <li class="nav-item" ng-if="auth">
+	        <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "nav-link" %>
+	      </li>
+      <% else %>
+	      <li class="nav-item">
+	        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+	      </li>
+	      <li class="nav-item" ng-if="!auth">
+	        <%= link_to "Registrar-se", new_user_registration_path, class: "nav-link" %>
+	      </li>
+	      <% end %>
+      <!-- <li class="nav-item">
+        <a class="nav-link" target="_blank" href="https://craftpip.github.io/jquery-confirm/#alert">jQuery Confirm Website</a>
+      </li> -->
+    </ul>
+  </div>
+</nav>
