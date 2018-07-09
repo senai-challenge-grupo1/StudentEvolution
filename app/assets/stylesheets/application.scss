@@ -12,3 +12,105 @@
  */
  
 @import "bootstrap";
+
+@font-face {
+	font-family: school;
+	src: url("/assets/SqueakyChalkSound.ttf");
+}
+
+.card.card-school {
+	border: 8px solid rgb(205,114,69);
+	background-color: rgb(6,138,80);
+	font-family: school;
+	text-shadow: 2px 2px 2px black;
+
+	.card-head {
+		font-weight: 800;
+	}
+
+	.card-body {
+
+		em {
+			font-size: 0.9em;
+		}
+
+		label {
+			font-size: 1.3em;
+		}
+
+		@media(max-width: 720px) {
+			label, .form-control {
+				text-align: center !important;
+			}
+		}
+
+		.form-control, .form-control:focus {
+			font-size: 1.3em;
+			border: none;
+			box-shadow: none;
+			color: white;
+			text-shadow: 2px 2px 2px black;
+			line-height: 1.5;
+			background-color: transparent;
+			padding-top: calc(0.375rem + 1px);
+    	padding-bottom: calc(0.375rem + 1px);
+		}
+
+		::placeholder {
+			color: white;
+			text-shadow: 2px 2px 2px black;
+		}
+
+		.shared {
+			a {
+				font-size: 0.9em;
+				color: white;
+			}
+		}
+
+		.btn {
+			background-color: transparent;
+			background-image: url("/assets/apagador.png");
+			background-size: 100% 100%;
+			border-radius: 0 0 5px 5px;
+			border: none;
+			margin-bottom: 5px;
+			padding-left: 1.5rem !important;
+			padding-right: 1.5rem !important;
+			padding-bottom: 1rem !important;
+			text-shadow: 2px 2px 2px white;
+			box-shadow: 0px 1px 5px 1px black;
+		}
+
+		.btn.btn-dark {
+			color: black;
+		}
+
+		.btn.btn-warning {
+			color: yellow;
+		}
+
+		.btn.btn-info {
+			color: cyan;
+			text-shadow: 2px 2px 2px black;
+		}
+
+		.btn.btn-primary {
+			color: blue;
+		}
+
+		.btn.btn-danger {
+			color: red;
+		}
+	}
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: none;
+  background-color: transparent !important;
+  transition: background-color 50000000000s ease-in-out 0s;
+}

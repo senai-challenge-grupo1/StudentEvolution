@@ -1,22 +1,12 @@
-<div class='container container-home'>
-  <!-- <div class='logo'></div> -->
-  <div class='boys-container'>
-  	<div class="row no-gutters">
-  		<div class="offset-1 offset-sm-2 col-6 col-sm-2">
-  			<!-- <stan></stan> -->
-  		</div>
-	  	<div class="col-5 col-sm-2">
-		    <!-- <kyle></kyle> -->
-	  	</div>
-	  	<div class="offset-1 offset-sm-0 col-6 col-sm-2">
-		    <!-- <cartman></cartman> -->
-	  	</div>
-	  	<div class="col-5 col-sm-2">
-		    <!-- <kenny></kenny> -->
-	  	</div>
-  	</div>
-  </div>
+<div class='container'>
   <div class="row justify-content-center">
-  	<button class="btn btn-lg btn-success">Jogar!</button>
+    <% if current_user %>
+      <button class="btn btn-lg btn-success">Jogar!</button><br>
+      <%= link_to "Perfil", edit_user_registration_path, class: "btn btn-warning" %><br>
+      <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+    <% else %>
+      <%= link_to "Entrar", new_user_session_path, class: "btn btn-primary" %><br>
+      <%= link_to "Registrar-se", new_user_registration_path, class: "btn btn-info" %>
+    <% end %>
   </div>
 </div>

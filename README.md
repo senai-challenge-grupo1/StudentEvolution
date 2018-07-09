@@ -5,6 +5,7 @@
 * Ruby V2.2.0+
 * Rails V5.0.7+
 * Node.js v8.9.3+
+* MySql Server (Xampp)
 
 
 ## Download
@@ -13,6 +14,7 @@
 ## Installation
 * Run `cd StudentEvolution` to enter on project.
 * Run `bundle install` to install dependencies of Rails.
+* Start MySql Server (username: "root", password: "").
 * Run `rails db:create` to create the database.
 * Run `rails db:migrate` to update the database to the last version.
 
