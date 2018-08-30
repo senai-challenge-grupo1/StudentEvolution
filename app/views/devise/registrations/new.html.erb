@@ -37,7 +37,7 @@
       <div class="field mt-1 row">
         <%= f.label :password, "Senha:", class: "col-12 col-sm-4 col-form-label text-right" %>
         <div class="col-12 col-sm">
-          <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Senha" %>
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
         </div>
         <% if @minimum_password_length %>
           <div class="col-12 text-center">
@@ -55,10 +55,10 @@
 
       <div class="actions mt-1 row text-center">
         <div class="col-sm-auto col-12 order-sm-first">
-          <%= link_to "Voltar", home_path, class: "btn btn-danger" %>
+          <%= link_to "Voltar", home_path, class: "btn btn-danger hvr-wobble-horizontal" %>
         </div>
         <div class="col-sm-auto col-12 ml-auto order-sm-last order-first">
-          <%= f.submit "Cadastrar", class: "btn btn-dark" %>
+          <%= f.submit "Cadastrar", class: "btn btn-dark hvr-wobble-horizontal" %>
         </div>
       </div>
     </div>

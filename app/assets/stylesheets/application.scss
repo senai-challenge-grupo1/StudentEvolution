@@ -12,15 +12,22 @@
  */
  
 @import "bootstrap";
+@import url("hover-min.css");
 
 @font-face {
 	font-family: school;
 	src: url("/assets/SqueakyChalkSound.ttf");
 }
 
+body {
+	background-image: radial-gradient(white, green);
+	background-repeat: no-repeat;
+	height: 90vh;
+}
+
 .card.card-school {
 	border: 8px solid rgb(205,114,69);
-	background-color: rgb(6,138,80);
+	background-image: radial-gradient(#068a50 50%, darkgreen);
 	font-family: school;
 	text-shadow: 2px 2px 2px black;
 
@@ -47,6 +54,7 @@
 		.form-control, .form-control:focus {
 			font-size: 1.3em;
 			border: none;
+			border-bottom: 1px dashed white;
 			box-shadow: none;
 			color: white;
 			text-shadow: 2px 2px 2px black;
@@ -54,6 +62,7 @@
 			background-color: transparent;
 			padding-top: calc(0.375rem + 1px);
     	padding-bottom: calc(0.375rem + 1px);
+    	border-radius: 0.25rem 0.25rem 0 0;
 		}
 
 		::placeholder {
