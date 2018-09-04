@@ -6,9 +6,9 @@
 
     <div class="card-body">
       <div class="field mt-1 row">
-        <%= f.label :email, "Email:", class: "col-3 col-form-label text-right" %>
+        <%= f.label :login, "Login:", class: "col-3 col-form-label text-right" %>
         <div class="col">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Ex.: e@mail.com" %>
+          <%= f.text_field :login, autofocus: true, autocomplete: "login", class: "form-control", placeholder: "Ex.: Login" %>
         </div>
       </div>
 
