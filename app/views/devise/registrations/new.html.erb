@@ -1,40 +1,39 @@
-<%= devise_error_messages! %>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <div class="card card-school text-white col-12 col-sm-10 offset-sm-1 p-2 mt-5">
+  <div class="card card-school text-white col-12 col-sm-10 offset-sm-1 p-2 pt-5">
     <div class="card-head">
       <h3 class="text-center">Registrar-se</h3>
     </div>
 
     <div class="card-body">
-      <div class="field mt-1 row">
+      <div class="mt-1 row">
         <%= f.label :nome, "Nome:", class: "col-12 col-sm-4 col-form-label text-right" %>
         <div class="col-12 col-sm">
-          <%= f.text_field :nome, autofocus: true, autocomplete: "nome", class: "form-control", placeholder: "Nome" %>
+          <%= f.text_field :nome, autofocus: true, autocomplete: "nome", class: "form-control" %>
         </div>
       </div>
 
-      <div class="field mt-1 row">
+      <div class="mt-1 row">
         <%= f.label :login, "Login:", class: "col-12 col-sm-4 col-form-label text-right" %>
         <div class="col-12 col-sm">
-          <%= f.text_field :login, autocomplete: "login", class: "form-control", placeholder: "Login" %>
+          <%= f.text_field :login, autocomplete: "login", class: "form-control" %>
         </div>
       </div>
 
-      <div class="field mt-1 row">
+      <div class="mt-1 row">
         <%= f.label :email, "Email:", class: "col-12 col-sm-4 col-form-label text-right" %>
         <div class="col-12 col-sm">
-          <%= f.email_field :email, autocomplete: "email", class: "form-control", placeholder: "Email" %>
+          <%= f.email_field :email, autocomplete: "email", class: "form-control" %>
         </div>
       </div>
 
-      <div class="field mt-1 row">
+      <div class="mt-1 row">
         <%= f.label :data_nascimento, "Data de nascimento:", class: "col-12 col-sm-4 col-form-label text-right" %>
         <div class="col-12 col-sm">
-          <%= f.text_field :data_nascimento, autocomplete: "data_nascimento", class: "date form-control", placeholder: "Data de nascimento" %>
+          <%= f.text_field :data_nascimento, autocomplete: "data_nascimento", class: "date form-control" %>
         </div>
       </div>
 
-      <div class="field mt-1 row">
+      <div class="mt-1 row">
         <%= f.label :password, "Senha:", class: "col-12 col-sm-4 col-form-label text-right" %>
         <div class="col-12 col-sm">
           <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
@@ -46,14 +45,14 @@
         <% end %>
       </div>
 
-      <div class="field mt-1 row">
+      <div class="mt-1 row">
         <%= f.label :password_confirmation, "Confirmar senha:", class: "col-12 col-sm-4 col-form-label text-right" %>
         <div class="col-12 col-sm">
-          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirme sua senha" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
         </div>
       </div>
 
-      <div class="actions mt-1 row text-center">
+      <div class="actions mt-1 row text-center mt-4">
         <div class="col-sm-auto col-12 order-sm-first">
           <%= link_to "Voltar", home_path, class: "btn btn-danger hvr-wobble-horizontal" %>
         </div>
