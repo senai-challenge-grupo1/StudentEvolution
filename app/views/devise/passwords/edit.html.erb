@@ -1,24 +1,39 @@
-<h2>Change your password</h2>
 <%= devise_error_messages! %>
-
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.hidden_field :reset_password_token %>
+  <div class="card card-school text-white col-12 col-sm-6 offset-sm-3 p-2 mt-5">
+    <div class="card-head mt-2">
+      <h1 class="text-center">Esqueceu sua senha?</h1>
+    </div>
 
-  <div class="field">
-    <%= f.label :password, "Nova senha" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
-  </div>
+    <div class="card-body">
+      <%= f.label :email, "E-mail:", class: "col-3 col-form-label text-right" %>
+        <div class="col">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Ex.: e@mail.com" %>
+        </div>
+      <div class="field mt-1 row">
+        <%= f.label :password, "Nova senha", class: "col-3 col-form-label text-right" %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+        <div class="col">
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirme a nova senha" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+      <div class="field mt-1 row">
+        <%= f.label :password_confirmation, "Confirme a nova senha", class: "col-3 col-form-label text-right" %>
+        <div class="col">
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Trocar minha senha", class: "hvr-wobble-horizontal" %>
+      <div class="shared row">
+        <div class="col-6">
+          <%= f.submit "Trocar minha senha", class: "hvr-wobble-horizontal" %>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
 
