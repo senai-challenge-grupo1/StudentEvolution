@@ -14,7 +14,7 @@
       <div class="field mt-1 row">
         <%= f.label :password, "Nova senha", class: "col-3 col-form-label text-right" %>
         <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>Mínimo de <%= @minimum_password_length %> caracteres.</em>
         <% end %>
         <div class="col">
           <%= f.password_field :password, class: "form-control" %>
