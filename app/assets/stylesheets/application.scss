@@ -20,7 +20,8 @@
 }
 
 body {
-	background-image: radial-gradient(white, green);
+	// background-image: radial-gradient(blue, green);
+	background-color: cyan;
 	background-repeat: no-repeat;
 	height: 100vh;
 }
@@ -36,12 +37,8 @@ body {
 	}
 
 	.card-body {
-		em {
-			font-size: 0.9em;
-		}
-
 		label {
-			font-size: 1.3em;
+			font-size: 1em;
 		}
 
 		@media(max-width: 720px) {
@@ -51,7 +48,7 @@ body {
 		}
 
 		.form-control, .form-control:focus {
-			font-size: 1.3em;
+			font-size: 1em;
 			border: none;
 			border-bottom: 1px dashed white;
 			box-shadow: none;
@@ -121,4 +118,8 @@ input:-webkit-autofill:focus {
   -webkit-box-shadow: none;
   background-color: transparent !important;
   transition: background-color 50000000000s ease-in-out 0s;
+}
+
+.text-sm {
+	font-size: 0.8em;
 }

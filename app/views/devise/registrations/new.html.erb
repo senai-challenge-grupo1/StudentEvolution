@@ -1,65 +1,28 @@
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <div class="card card-school text-white col-12 col-sm-10 offset-sm-1 p-2 pt-5">
+<section class="px-5 mx-5">
+  <div class="card card-school shadow-lg text-white pt-4 px-3 mx-5">
     <div class="card-head">
-      <h3 class="text-center">Registrar-se</h3>
+      <h3 class="text-center mb-0 py-0">Registrar-se</h3>
     </div>
+    
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class="card-body form-inputs pt-0">
+        <%= f.input :nome, label: "Nome:", autofocus: true, required: true, input_html: { class: "form-control mt-0 p-0" }, label_html: { class: "mb-0" }, title: "Obrigatório" %>
 
-    <div class="card-body">
-      <div class="mt-1 row">
-        <%= f.label :nome, "Nome:", class: "col-12 col-sm-4 col-form-label text-right" %>
-        <div class="col-12 col-sm">
-          <%= f.text_field :nome, autofocus: true, autocomplete: "nome", class: "form-control" %>
-        </div>
-      </div>
+        <%= f.input :login, label: "Login:", required: true, input_html: { class: "form-control mt-0 p-0" }, label_html: { class: "mb-0 mt-3" } %>
 
-      <div class="mt-1 row">
-        <%= f.label :login, "Login:", class: "col-12 col-sm-4 col-form-label text-right" %>
-        <div class="col-12 col-sm">
-          <%= f.text_field :login, autocomplete: "login", class: "form-control" %>
-        </div>
-      </div>
+        <%= f.input :email, label: "E-mail:", required: true, input_html: { class: "form-control mt-0 p-0" }, label_html: { class: "mb-0 mt-3" } %>
 
-      <div class="mt-1 row">
-        <%= f.label :email, "Email:", class: "col-12 col-sm-4 col-form-label text-right" %>
-        <div class="col-12 col-sm">
-          <%= f.email_field :email, autocomplete: "email", class: "form-control" %>
-        </div>
-      </div>
+        <%= f.input :data_nascimento, label: "Data nascimento:", required: true, input_html: { class: " mt-0 p-0" }, label_html: { class: "mb-0 mt-2" }, order: [:day, :month, :year] %>
 
-      <div class="mt-1 row">
-        <%= f.label :data_nascimento, "Data de nascimento:", class: "col-12 col-sm-4 col-form-label text-right" %>
-        <div class="col-12 col-sm">
-          <%= f.text_field :data_nascimento, autocomplete: "data_nascimento", class: "date form-control" %>
-        </div>
-      </div>
+        <%= f.input :password, label: "Senha:", required: true, autocomplete: "off", hint: "Mínimo de " + @minimum_password_length.to_s + " caracteres", input_html: { class: "form-control mt-0 p-0" }, label_html: { class: "mb-0 mt-3" } %>
 
-      <div class="mt-1 row">
-        <%= f.label :password, "Senha:", class: "col-12 col-sm-4 col-form-label text-right" %>
-        <div class="col-12 col-sm">
-          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-        </div>
-        <% if @minimum_password_length %>
-          <div class="col-12 text-center">
-            <em>(Mínimo <%= @minimum_password_length %> caracteres)</em>
-          </div>
-        <% end %>
-      </div>
+        <%= f.input :password_confirmation, label: "Confirme a senha:", required: true, autocomplete: "off", input_html: { class: "form-control mt-0 p-0" }, label_html: { class: "mb-0 mt-3" } %>
 
-      <div class="mt-1 row">
-        <%= f.label :password_confirmation, "Confirmar senha:", class: "col-12 col-sm-4 col-form-label text-right" %>
-        <div class="col-12 col-sm">
-          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-        </div>
-      </div>
-
-      <div class="actions mt-1 row text-center mt-4">
-        <div class="col-sm-auto col-12 order-sm-first">
+        <div class="actions mt-3 row">
           <%= link_to "Voltar", home_path, class: "btn btn-danger hvr-wobble-horizontal" %>
+          <%= f.submit "Cadastrar", class: "btn btn-dark hvr-wobble-horizontal ml-auto" %>
         </div>
-        <div class="col-sm-auto col-12 ml-auto order-sm-last order-first">
-          <%= f.submit "Cadastrar", class: "btn btn-dark hvr-wobble-horizontal" %>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
-<% end %>
+</section>
