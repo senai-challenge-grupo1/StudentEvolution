@@ -6,7 +6,7 @@
     
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <div class="card-body form-inputs pt-0">
-        <%= f.input :nome, label: "Nome:", autofocus: true, required: true, input_html: { class: "form-control mt-0 p-0" }, label_html: { class: "mb-0" }, title: "Obrigatório" %>
+        <%= f.input :nome, label: "Nome:", autofocus: true, required: true, input_html: { class: "form-control mt-0 p-0" }, label_html: { class: "mb-0" } %>
 
         <%= f.input :login, label: "Login:", required: true, input_html: { class: "form-control mt-0 p-0" }, label_html: { class: "mb-0 mt-3" } %>
 
