@@ -1,19 +1,21 @@
-<div class="card card-school text-white col-12 col-sm-6 offset-sm-3 p-2 mt-5">
-  <div class="card-head mt-2">
-    <h1 class="text-center">Troque sua senha</h1>
-  </div>
-  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-    <%= f.hidden_field :reset_password_token %>
+<section class="pt-5">
+  <div class="card card-school text-white col-12 col-sm-6 offset-sm-3 p-2 mt-5">
+    <div class="card-head mt-2">
+      <h1 class="text-center">Troque sua senha</h1>
+    </div>
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.hidden_field :reset_password_token %>
 
-    <div class="card-body form-inputs pb-0">
-      <%= f.input :password, label: "Nova senha:", autofocus: true, autocomplete: "off", label_html: { class: "m-0" }, input_html: { class: "p-0" } %>
-      <%= f.input :password_confirmation, label: "Confirmar senha:", autocomplete: "off", label_html: { class: "m-0" }, input_html: { class: "p-0" }, hint: "Mínimo de " + @minimum_password_length.to_s + " caracteres." %>
+      <div class="card-body form-inputs pb-0">
+        <%= f.input :password, label: "Nova senha:", autofocus: true, autocomplete: "off", label_html: { class: "m-0" }, input_html: { class: "p-0" } %>
+        <%= f.input :password_confirmation, label: "Confirmar senha:", autocomplete: "off", label_html: { class: "m-0" }, input_html: { class: "p-0" }, hint: "Mínimo de " + @minimum_password_length.to_s + " caracteres." %>
 
-      <div class="shared row mt-3">
-          <%= link_to "Voltar", home_path, class: "btn btn-danger hvr-wobble-horizontal" %>
-          <%= f.submit "Trocar senha", class: "btn btn-dark ml-auto hvr-wobble-horizontal" %>
+        <div class="shared row mt-3">
+            <%= link_to "Voltar", home_path, class: "btn btn-danger hvr-wobble-horizontal" %>
+            <%= f.submit "Trocar senha", class: "btn btn-dark ml-auto hvr-wobble-horizontal" %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</section>

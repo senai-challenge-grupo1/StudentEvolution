@@ -1,12 +1,25 @@
-<div class='container'>
-  <div class="row justify-content-center">
-    <% if current_user %>
-      <button class="btn btn-lg btn-success">Jogar!</button><br>
-      <%= link_to "Perfil", edit_user_registration_path, class: "btn btn-warning" %><br>
-      <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
-    <% else %>
-      <%= link_to "Entrar", new_user_session_path, class: "btn btn-primary" %><br>
-      <%= link_to "Registrar-se", new_user_registration_path, class: "btn btn-info" %>
-    <% end %>
+<section class="pt-5">
+  <div class="card card-school p-3 pt-5 mt-5 offset-2 col-8 text-center text-light">
+    <div class="card-head">
+      <h1 class="card-title text-light">Student Evolution</h1>
+    </div>
+    <div class="card-body">
+      <% if current_user %>
+        <p class="mb-4 h3"><%= link_to "Jogar", edit_user_registration_path, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
+        <p class="mb-2 h5"><%= link_to "Perfil", edit_user_registration_path, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
+      <% else %>
+        <p class="mb-2 h5"><%= link_to "Entrar", new_user_session_path, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
+        <p class="mb-2 h5"><%= link_to "Registrar-se", new_user_registration_path, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
+      <% end %>
+
+      <p class="mb-2 h5"><%= link_to "Ranking", new_user_session_path, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
+      <p class="mb-2 h5"><%= link_to "Sugestão de perguntas", new_user_registration_path, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
+      <p class="mb-2 h5"><%= link_to "Sobre", new_user_session_path, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
+      <p class="mb-2 h5"><%= link_to "Ajuda", new_user_registration_path, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
+
+      <% if current_user %>
+        <p class="h5"><%= link_to "Sair", destroy_user_session_path, method: :delete, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
+      <% end %>
+    </div>
   </div>
-</div>
+</section>
