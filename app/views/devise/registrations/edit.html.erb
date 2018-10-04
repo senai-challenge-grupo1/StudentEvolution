@@ -4,15 +4,15 @@
       <h3 class="text-center">Editar perfil de <%= resource.nome.to_s.humanize %></h3>
     </div>
 
-    <div class="card-body">
+    <div class="card-body pt-0">
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <%= f.input :nome, label: "Nome:", label_html: { class: "mt-2 mb-0" }, input_html: { class: "form-control" }, autofocus: true %>
-        <%= f.input :login, label: "Login:", label_html: { class: "mt-2 mb-0" }, input_html: { class: "form-control mt-0" } %>
-        <%= f.input :email, label: "E-mail:", label_html: { class: "mt-2 mb-0" }, input_html: { class: "form-control" } %>
-        <%= f.input :data_nascimento, label: "Data de nascimento:", label_html: { class: "mt-2 mb-0" }, input_html: { class: "form-control" }, order: [:day, :month, :year] %>
-        <%= f.input :current_password, label: "Senha atual:", hint: "Precisamos de sua senha atual para confirmar as alterações", label_html: { class: "mt-2 mb-0" }, input_html: { class: "form-control" } %>
+        <%= f.input :nome, label: "Nome:", autofocus: true %>
+        <%= f.input :login, label: "Login:" %>
+        <%= f.input :email, label: "E-mail:" %>
+        <%= f.input :data_nascimento, as: :date, label: "Data de nascimento:", order: [:day, :month, :year] %>
+        <%= f.input :current_password, label: "Senha atual:", hint: "Precisamos de sua senha atual para confirmar as alterações" %>
       </div>
 
       <div class="form-actions mt-3">

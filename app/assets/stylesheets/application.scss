@@ -36,32 +36,39 @@ body {
 	}
 
 	.card-body {
-		em {
-			font-size: 0.9em;
-		}
-
-		label {
-			font-size: 1.3em;
-		}
-
-		@media(max-width: 720px) {
-			label, .form-control {
-				text-align: center !important;
+		.form-inputs {
+			@media(max-width: 720px) {
+				.form-control-label, .form-control {
+					text-align: center !important;
+				}
 			}
-		}
 
-		.form-control, .form-control:focus {
-			font-size: 1.3em;
-			border: none;
-			border-bottom: 1px dashed white;
-			box-shadow: none;
-			color: white;
-			text-shadow: 2px 2px 2px black;
-			line-height: 1.5;
-			background-color: transparent;
-			padding-top: calc(0.375rem + 1px);
-    	padding-bottom: calc(0.375rem + 1px);
-    	border-radius: 0.25rem 0.25rem 0 0;
+			.form-control, .form-control:focus {
+				font-size: 1.1em;
+				border: none;
+				border-bottom: 1px dashed white;
+				box-shadow: none;
+				color: white;
+				text-shadow: 2px 2px 2px black;
+				line-height: 1.4;
+				background-color: transparent;
+	    	border-radius: 0.25rem 0.25rem 0 0;
+	    	padding: 0.25rem 0 0 0;
+			}
+
+			select.form-control, select.form-control:focus {
+				font-size: 1em;
+			}
+
+			.form-control-label {
+				font-size: 1em;
+				margin: 0.5rem 0 0 0;
+			}
+
+			.form-control-label:not(:first-child) {
+				padding-top: 0.5rem;
+				padding-bottom: 0;
+			}
 		}
 
 		::placeholder {

@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
 # Bootstrap
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.1.3'
 
 # Simple Form
 gem 'simple_form'
