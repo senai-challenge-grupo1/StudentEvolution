@@ -41,6 +41,8 @@ gem 'bootstrap', '~> 4.1.3'
 # Simple Form
 gem 'simple_form'
 
+gem 'font_awesome5_rails'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'

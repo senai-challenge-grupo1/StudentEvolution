@@ -1,17 +1,5 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- */
- 
 @import "bootstrap";
+@import "font_awesome5";
 @import url("hover-min.css");
 
 @font-face {
@@ -20,7 +8,8 @@
 }
 
 body {
-	background-image: radial-gradient(white, green);
+	background-image: url("/assets/bg.jpg");
+	background-size: cover;
 	background-repeat: no-repeat;
 	height: 100vh;
 }
@@ -59,7 +48,7 @@ body {
 			select.form-control, select.form-control:focus {
 				font-size: 1em;
 			}
-
+			
 			.form-control-label {
 				font-size: 1em;
 				margin: 0.5rem 0 0 0;
@@ -128,4 +117,137 @@ input:-webkit-autofill:focus {
   -webkit-box-shadow: none;
   background-color: transparent !important;
   transition: background-color 50000000000s ease-in-out 0s;
+}
+
+.text-sm {
+	font-size: 0.8em;
+}
+
+.shadow-0 {
+	text-shadow: none;
+}
+
+.no-container {
+	max-width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.progress-container {
+	display: inherit;
+
+	span {
+		font-weight: bolder;
+	}
+}
+
+.bar {
+	border: 3px solid black;
+	border-radius: 20px;
+	box-shadow: 0 0 8px black;
+}
+
+.bar.bar-horizontal {
+	height: 25px;
+	width: 40px;
+
+	.progress {
+		border-radius: 20px;
+		height: 19px;
+		width: 100%;
+	}
+
+	.progress.progress-bored {
+		background: linear-gradient(to right, white -30%, #4a084a 0%, white 0);
+	}
+
+	.progress.progress-stress {
+		background: linear-gradient(to right, yellow, red 0%, white 0);
+	}
+
+	.progress.progress-xp {
+		background: linear-gradient(to right, lightgreen, green 0%, white 0);
+	}
+
+	.progress.progress-blue {
+		background: linear-gradient(to right, lightblue, blue 0%, white 0);
+	}
+}
+
+.bar.bar-horizontal.bar-1 {
+	width: 50px;
+}
+
+.bar.bar-horizontal.bar-2 {
+	width: 100px;
+}
+
+.bar.bar-horizontal.bar-3 {
+	width: 150px;
+}
+
+.bar.bar-horizontal.bar-4 {
+	width: 200px;
+}
+
+.bar.bar-horizontal.bar-5 {
+	width: 250px;
+}
+
+.profile-container {
+	display: inline;
+
+	span {
+		font-weight: bolder;
+		text-shadow: 0px 0px 1px white;
+		color: white;
+	}
+}
+
+.icon-circle {
+	border-radius: 50%;
+}
+
+.text-shadow-black {
+	text-shadow: 2px 2px 5px black;
+}
+
+.text-shadow-white {
+	text-shadow: 2px 2px 5px white;
+}
+
+
+.text-shadow-black.text-shadow-1 {
+	text-shadow: 0px 0px 1px black;
+}
+
+.text-shadow-white.text-shadow-1 {
+	text-shadow: 0px 0px 1px white;
+}
+
+
+.sidebar {
+	background-color: #f3f37c;
+	position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  height: 40vh;
+  border-radius: 0 40px 0 0;
+  border: 3px solid black;
+}
+
+.subjects {
+
+	.subject-container {
+		border-radius: 20px;
+
+		.subject-head {
+			margin-bottom: 0.25rem;
+
+			.subject-title {
+				font-weight: bolder;
+			}
+		}
+	}
 }

@@ -1,40 +1,21 @@
-<%= devise_error_messages! %>
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.hidden_field :reset_password_token %>
-  <div class="card card-school text-white col-12 col-sm-6 offset-sm-3 p-2 mt-5">
+<section class="mt-5 pt-5">
+  <div class="card card-school text-white col-12 col-sm-6 offset-sm-3 p-2 mt-5 shadow-lg">
     <div class="card-head mt-2">
-      <h1 class="text-center">Esqueceu sua senha?</h1>
+      <h1 class="text-center">Troque sua senha</h1>
     </div>
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.hidden_field :reset_password_token %>
 
-    <div class="card-body">
-      <%= f.label :email, "E-mail:", class: "col-3 col-form-label text-right" %>
-        <div class="col">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Ex.: e@mail.com" %>
-        </div>
-      <div class="field mt-1 row">
-        <%= f.label :password, "Nova senha", class: "col-3 col-form-label text-right" %>
-        <% if @minimum_password_length %>
-          <em>Mínimo de <%= @minimum_password_length %> caracteres.</em>
-        <% end %>
-        <div class="col">
-          <%= f.password_field :password, class: "form-control" %>
-        </div>
-      </div>
+      <div class="card-body form-inputs pb-0">
+        <%= f.input :password, label: "Nova senha:", autofocus: true, autocomplete: "off", label_html: { class: "m-0" }, input_html: { class: "p-0" } %>
+        <%= f.input :password_confirmation, label: "Confirmar senha:", autocomplete: "off", label_html: { class: "m-0" }, input_html: { class: "p-0" }, hint: "Mínimo de " + @minimum_password_length.to_s + " caracteres." %>
 
-      <div class="field mt-1 row">
-        <%= f.label :password_confirmation, "Confirme a nova senha", class: "col-3 col-form-label text-right" %>
-        <div class="col">
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        </div>
-      </div>
-
-      <div class="shared row">
-        <div class="col-6">
-          <%= f.submit "Trocar minha senha", class: "hvr-wobble-horizontal" %>
+        <div class="shared row mt-3">
+            <%= link_to "Voltar", home_path, class: "btn btn-danger hvr-wobble-horizontal" %>
+            <%= f.submit "Trocar senha", class: "btn btn-dark ml-auto hvr-wobble-horizontal" %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <% end %>
+</section>
