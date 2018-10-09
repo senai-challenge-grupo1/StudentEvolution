@@ -41,7 +41,11 @@ gem 'bootstrap', '~> 4.1.3'
 # Simple Form
 gem 'simple_form'
 
+# Font Awesome 5
 gem 'font_awesome5_rails'
+
+#Rails Admin for administrators
+gem 'rails_admin', '~> 1.3'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

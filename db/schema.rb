@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180705200653) do
+ActiveRecord::Schema.define(version: 20181009202925) do
+
+  create_table "perguntas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "area"
+    t.integer  "nivel"
+    t.string   "texto"
+    t.string   "resposta1"
+    t.string   "resposta2"
+    t.string   "resposta3"
+    t.string   "resposta4"
+    t.integer  "resposta_correta"
+    t.boolean  "aprovada"
+    t.integer  "User_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["User_id"], name: "index_perguntas_on_User_id", using: :btree
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
@@ -32,4 +48,5 @@ ActiveRecord::Schema.define(version: 20180705200653) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "perguntas", "users", column: "User_id"
 end

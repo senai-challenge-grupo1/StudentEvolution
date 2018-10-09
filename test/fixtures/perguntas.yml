@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  area: MyString
+  nivel: 1
+  texto: MyString
+  resposta1: MyString
+  resposta2: MyString
+  resposta3: MyString
+  resposta4: MyString
+  resposta_correta: 1
+  aprovada: false
+  User: one
+
+two:
+  area: MyString
+  nivel: 1
+  texto: MyString
+  resposta1: MyString
+  resposta2: MyString
+  resposta3: MyString
+  resposta4: MyString
+  resposta_correta: 1
+  aprovada: false
+  User: two

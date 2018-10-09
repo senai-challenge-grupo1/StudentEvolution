@@ -1,0 +1,19 @@
+<%= simple_form_for(@pergunta) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :area, label: "Área:", div_html: { class: "col-4" } %>
+    <%= f.input :nivel, label: "Nível:", div_html: { class: "col-4" } %>
+    <%= f.input :texto, label: "Texto:" %>
+    <%= f.input :resposta1, label: "Resposta 1:" %>
+    <%= f.input :resposta2, label: "Resposta 2:" %>
+    <%= f.input :resposta3, label: "Resposta 3:" %>
+    <%= f.input :resposta4, label: "Resposta 4:" %>
+    <%= f.input :resposta_correta, label: "Resposta correta:" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<div class="card card-school text-white mt-3 mb-3 px-5 pt-3 pb-1 shadow-lg">
+  <div class="card-head">
+    <h1 class="card-title">Perguntas</h1>
+  </div>
+  <div class="card-body">
+    <table class="table table-striped table-bordered" style="width:100%">
+      <thead>
+        <tr>
+          <th>Area</th>
+          <th>Nivel</th>
+          <th>Texto</th>
+          <th>Aprovada</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @perguntas.each do |pergunta| %>
+          <tr>
+            <td><%= pergunta.area %></td>
+            <td><%= pergunta.nivel %></td>
+            <td><%= pergunta.texto %></td>
+            <td><%= pergunta.aprovada %></td>
+            <td><%= link_to 'Ver', pergunta %></td>
+            <td><%= link_to 'Editar', edit_pergunta_path(pergunta) %></td>
+            <td><%= link_to 'Apagar', pergunta, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%= link_to 'Cadastrar pergunta', new_pergunta_path, class: "text-white" %>
+</div>

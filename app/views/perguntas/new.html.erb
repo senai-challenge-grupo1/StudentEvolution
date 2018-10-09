@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+<div class="card card-school text-white mt-3 mb-3 px-5 pt-3 pb-1 shadow-lg">
+  <div class="card-head">
+    <h1 class="card-title">Cadastrar pergunta</h1>
+  </div>
+  <div class="card-body">
+		<%= render 'form', pergunta: @pergunta %>
+  </div>
+  <%= link_to 'Voltar', perguntas_path, class: "text-white" %>
+</div>
