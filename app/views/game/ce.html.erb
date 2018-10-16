@@ -1,0 +1,48 @@
+<section>
+  <%= render "navbarhub" %>
+
+  <div class="sidebar sidebar-vertical pl-4 text-center">
+  	<div class="progress-container ml-auto mr-3 mt-2">
+			<span class="ce-span">Progresso:</span> <span id="ce-percent">0</span>%
+
+			<div id="ce" class="bar bar-vertical bar-5">
+				<div id="ce-progress" class="progress progress-blue"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="card card-tests mx-6 px-5 pt-5 pb-0 shadow-lg">
+		<div class="card-head text-center">
+			<h3 class="card-title h1">
+				Ciências Exatas
+			</h3>
+		</div>
+
+		<div class="card-body mt-3">
+			<% @cont = 0 %>
+			<% @tests.each_with_index do |teste, index| %>
+				<% if index % 2 == 0 %>
+					<div class="row">
+				<% end %>
+
+					<div id="teste<%= teste.id %>" class="<% if index % 2 != 0 %>offset-2 <% end %>col-5 card <% if teste.acertos == 4 %>finish <% end %>p-3 mb-4 shadow text-center">
+						<div class="card-head">
+							<h3 id="teste-titulo" class="card-title h5"><b>Teste <%= teste.id %></b></h3>
+						</div>
+
+						<div class="card-body">
+							Progresso do teste: <span id="teste-percentual"><%= 25 * teste.acertos %></span>%
+						</div>
+					</div>
+
+				<% if index % 2 != 0 %>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</section>
+
+<script type="text/javascript">
+  $(".container").addClass("no-container");
+</script>

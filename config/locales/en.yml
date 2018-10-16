@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+  # time:
+  #   formats:
+      # default: ! '%a, %d de %B de %Y, %H:%M:%S %z'
+      #   long: ! '%d de %B de %Y, %H:%M'
+      #   short: ! '%d de %B, %H:%M'
+      #   simple: ! '%d/%m/%Y'

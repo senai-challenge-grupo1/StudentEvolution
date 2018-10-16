@@ -46,6 +46,7 @@ gem 'font_awesome5_rails'
 
 #Rails Admin for administrators
 gem 'rails_admin', '~> 1.3'
+gem "rails_admin_import", "~> 2.1"
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

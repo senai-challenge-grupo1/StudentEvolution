@@ -3,14 +3,14 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :area, label: "Área:", div_html: { class: "col-4" } %>
-    <%= f.input :nivel, label: "Nível:", div_html: { class: "col-4" } %>
+    <%= f.input :area, as: :select, collection: [['ce', 'Ciências Exatas'], ['ch', 'Ciências Humanas'], ['cb', 'Ciências Biológicas'], ['lc', 'Linguagens e Códigos']], value_method: :first, label_method: :second, label: "Área:", div_html: { class: "col-4" } %>
+    <%= f.input :nivel, label: "Nível:", div_html: { class: "col-4" }, input_html: { min: 1, max: 10 } %>
     <%= f.input :texto, label: "Texto:" %>
     <%= f.input :resposta1, label: "Resposta 1:" %>
     <%= f.input :resposta2, label: "Resposta 2:" %>
     <%= f.input :resposta3, label: "Resposta 3:" %>
     <%= f.input :resposta4, label: "Resposta 4:" %>
-    <%= f.input :resposta_correta, label: "Resposta correta:" %>
+    <%= f.input :resposta_correta, as: :select, collection: [[1, 1], [2, 2], [3, 3], [4, 4]], label: "Resposta correta:" %>
   </div>
 
   <div class="form-actions">

@@ -7,7 +7,7 @@
   	</h4>
 
   	<div class="progress-container ml-auto mr-3 mt-2">
-			<span class="ce-span">Ciências Exatas:</span> <span id="ce-percent">10%</span>
+			<span class="ce-span">Ciências Exatas:</span> <span id="ce-percent">0</span>%
 
 			<div id="ce" class="bar bar-horizontal bar-5">
 				<div id="ce-progress" class="progress progress-blue"></div>
@@ -15,7 +15,7 @@
 		</div>
 
 		<div class="progress-container ml-auto mr-3 mt-2">
-			<span class="ch-span">Ciências Humanas:</span> <span id="ch-percent">10%</span>
+			<span class="ch-span">Ciências Humanas:</span> <span id="ch-percent">0</span>%
 
 			<div id="ch" class="bar bar-horizontal bar-5">
 				<div id="ch-progress" class="progress progress-blue"></div>
@@ -23,7 +23,7 @@
 		</div>
 
 		<div class="progress-container ml-auto mr-3 mt-2">
-			<span class="cb-span">Ciências Biológicas:</span> <span id="cb-percent">10%</span>
+			<span class="cb-span">Ciências Biológicas:</span> <span id="cb-percent">0</span>%
 
 			<div id="cb" class="bar bar-horizontal bar-5">
 				<div id="cb-progress" class="progress progress-blue"></div>
@@ -31,7 +31,7 @@
 		</div>
 
 		<div class="progress-container ml-auto mr-3 mt-2">
-			<span class="lc-span">Linguagens e Códigos:</span> <span id="lc-percent">10%</span>
+			<span class="lc-span">Linguagens e Códigos:</span> <span id="lc-percent">0</span>%
 
 			<div id="lc" class="bar bar-horizontal bar-5">
 				<div id="lc-progress" class="progress progress-blue"></div>
@@ -39,64 +39,64 @@
 		</div>
   </div>
 
-  <div class="subjects col-8">
-  	<div id="ce" class="subject-container">
+  <div class="subjects">
+  	<div id="ce-container" class="subject-container">
   		<div class="subject-head text-center">
   			<h2 class="subject-title">Ciências Exatas</h2>
   		</div>
 
   		<div class="subject-body">
-  			Teste CE
+
   		</div>
   	</div>
 
-  	<div id="ch" class="subject-container">
+  	<div id="ch-container" class="subject-container">
   		<div class="subject-head text-center">
   			<h2 class="subject-title">Ciências Humanas</h2>
   		</div>
 
   		<div class="subject-body">
-  			Teste CH
+  			
   		</div>
   	</div>
 
-  	<div id="cb" class="subject-container">
+  	<div id="cb-container" class="subject-container">
   		<div class="subject-head text-center">
   			<h2 class="subject-title">Ciências Biológicas</h2>
   		</div>
 
   		<div class="subject-body">
-  			Teste CB
+  			
   		</div>
   	</div>
 
-  	<div id="lc" class="subject-container">
+  	<div id="lc-container" class="subject-container">
   		<div class="subject-head text-center">
   			<h2 class="subject-title">Linguágens e Códigos</h2>
   		</div>
 
   		<div class="subject-body">
-  			Teste LC
+  			
   		</div>
   	</div>
 
-  	<div id="br" class="subject-container subject-min">
+  	<div id="br-container" class="subject-container subject-min">
   		<div class="subject-head text-center">
   			<h2 class="subject-title">Dormitório</h2>
   		</div>
 
   		<div class="subject-body">
-  			Teste BR
+  			
   		</div>
   	</div>
 
-  	<div id="sr" class="subject-container subject-min">
+  	<div id="sr-container" class="subject-container subject-min">
   		<div class="subject-head text-center">
   			<h2 class="subject-title">Recreação</h2>
   		</div>
 
   		<div class="subject-body">
-  			Teste SR
+  			
   		</div>
   	</div>
   </div>
@@ -104,4 +104,5 @@
 
 <script type="text/javascript">
   $(".container").addClass("no-container");
+  $(".subject-container").click(function(){redirect(this.id)});
 </script>

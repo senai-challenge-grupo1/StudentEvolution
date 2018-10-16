@@ -1,15 +1,38 @@
 class PerguntasController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_pergunta, only: [:show, :edit, :update, :destroy]
 
   # GET /perguntas
   # GET /perguntas.json
   def index
     @perguntas = Pergunta.all
+    @perguntas.each do |pergunta|
+      case pergunta.area
+        when "ce"
+          pergunta.area = "Ciências Exatas"
+        when "ch"
+          pergunta.area = "Ciências Humanas"
+        when "cb"
+          pergunta.area = "Ciências Biológicas"
+        when "lc"
+          pergunta.area = "Linguagens e Códigos"
+      end
+    end
   end
 
   # GET /perguntas/1
   # GET /perguntas/1.json
   def show
+    case @pergunta.area
+      when "ce"
+        @pergunta.area = "Ciências Exatas"
+      when "ch"
+        @pergunta.area = "Ciências Humanas"
+      when "cb"
+        @pergunta.area = "Ciências Biológicas"
+      when "lc"
+        @pergunta.area = "Linguagens e Códigos"
+    end
   end
 
   # GET /perguntas/new
@@ -26,7 +49,7 @@ class PerguntasController < ApplicationController
   # POST /perguntas.json
   def create
     @pergunta = Pergunta.new(pergunta_params)
-    @pergunta.user = current_user
+    # @pergunta.user = current_user
 
     respond_to do |format|
       if @pergunta.save
@@ -71,6 +94,6 @@ class PerguntasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pergunta_params
-      params.require(:pergunta).permit(:area, :nivel, :texto, :resposta1, :resposta2, :resposta3, :resposta4, :resposta_correta, :aprovada, :User_id)
+      params.require(:pergunta).permit(:area, :nivel, :texto, :resposta1, :resposta2, :resposta3, :resposta4, :resposta_correta, :aprovada)
     end
 end
