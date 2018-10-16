@@ -3,8 +3,10 @@ RailsAdmin.config do |config|
   ### Popular gems integration
 
   # == Devise ==
-  config.authenticate_with do
-    if !current_user? and !current_user.admin?
+  config.parent_controller = "::ApplicationController"
+
+  config.authenticate_with do |controller|
+    unless current_user and current_user.admin?
       redirect_to main_app.root_path
     end
   end
