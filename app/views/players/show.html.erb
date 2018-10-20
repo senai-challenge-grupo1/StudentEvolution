@@ -1,0 +1,63 @@
+<div class="card card-school text-white mt-3 mb-3 px-5 pt-3 pb-1">
+  <div class="card-head">
+    <h1 class="card-title">Player</h1>
+  </div>
+  <div class="card-body">
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong>Nível:</strong>
+      <%= @player.nivel %>
+    </p>
+
+    <p>
+      <strong>Xp:</strong>
+      <%= @player.xp %>
+    </p>
+
+    <p>
+      <strong>Stress:</strong>
+      <%= @player.stress %>
+    </p>
+
+    <p>
+      <strong>Tédio:</strong>
+      <%= @player.bored %>
+    </p>
+
+    <p>
+      <strong>Progresso em Ciências Exatas:</strong>
+      <%= @player.ce %>
+    </p>
+
+    <p>
+      <strong>Progresso em Ciências Humanas:</strong>
+      <%= @player.ch %>
+    </p>
+
+    <p>
+      <strong>Progresso em Ciências Biológicas:</strong>
+      <%= @player.cb %>
+    </p>
+
+    <p>
+      <strong>Progresso em Linguagens e Códigos:</strong>
+      <%= @player.lc %>
+    </p>
+
+    <p>
+      <strong>Score:</strong>
+      <%= @player.score %>
+    </p>
+
+    <p>
+      <strong>User:</strong>
+      <%= @player.user.nome %>
+    </p>
+    
+    <div class="shared row">
+      <%= link_to 'Voltar', players_path, class: "btn btn-dark hvr-wobble-horizontal" %>
+      <%= link_to 'Editar', edit_player_path(@player), class: "btn btn-dark hvr-wobble-horizontal ml-auto" %>
+    </div>
+  </div>
+</div>

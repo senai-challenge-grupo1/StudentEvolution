@@ -11,6 +11,7 @@
           <th>Area</th>
           <th>Nivel</th>
           <th>Texto</th>
+          <th>Aprovada</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -21,9 +22,14 @@
             <td><%= pergunta.area %></td>
             <td><%= pergunta.nivel %></td>
             <td><%= truncate(pergunta.texto, {length: 20}) %></td>
-            <td><%= link_to 'Ver', pergunta %></td>
-            <td><%= link_to 'Editar', edit_pergunta_path(pergunta) %></td>
-            <td><%= link_to 'Apagar', pergunta, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+            <% if pergunta.aprovada %>
+              <td>Sim</td>
+            <% else %>
+              <td>Não</td>
+            <% end %>
+            <td><%= link_to pergunta do %><i class="fas fa-info text-white icon-circle"></i><% end %></td>
+            <td><%= link_to edit_pergunta_path(pergunta) do %><i class="fas fa-pen text-white icon-circle"></i><% end %></td>
+            <td><%= link_to pergunta, method: :delete, data: { confirm: 'Você tem certeza?' } do %><i class="fas fa-times text-white icon-circle"></i><% end %></td>
           </tr>
         <% end %>
       </tbody>

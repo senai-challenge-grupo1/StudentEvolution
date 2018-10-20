@@ -11,6 +11,9 @@
     <%= f.input :resposta3, label: "Resposta 3:" %>
     <%= f.input :resposta4, label: "Resposta 4:" %>
     <%= f.input :resposta_correta, as: :select, collection: [[1, 1], [2, 2], [3, 3], [4, 4]], label: "Resposta correta:" %>
+    <% if current_user.admin %>
+      <%= f.input :aprovada, label: "Aprovada:" %>
+    <% end %>
   </div>
 
   <div class="form-actions">

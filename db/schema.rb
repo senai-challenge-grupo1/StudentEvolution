@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181016173626) do
+ActiveRecord::Schema.define(version: 20181019005401) do
 
   create_table "perguntas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "area"
@@ -24,6 +24,22 @@ ActiveRecord::Schema.define(version: 20181016173626) do
     t.boolean  "aprovada"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "players", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "nivel",      default: 1
+    t.integer  "xp",         default: 0
+    t.integer  "stress",     default: 0
+    t.integer  "bored",      default: 1
+    t.integer  "ce",         default: 0
+    t.integer  "ch",         default: 0
+    t.integer  "cb",         default: 0
+    t.integer  "lc",         default: 0
+    t.integer  "score",      default: 0
+    t.integer  "user_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["user_id"], name: "index_players_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -47,4 +63,5 @@ ActiveRecord::Schema.define(version: 20181016173626) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "players", "users"
 end

@@ -1,0 +1,201 @@
+<section>
+	<div class="sidebar sidebar-vertical sidebar-2 text-center bg-white">
+		<div class="cronometro pt-1">
+			<h3>
+				<span id="minuto">04</span>:<span id="segundo">00</span>
+			</h3>
+		</div>
+
+		<div class="row">
+  		<a id="quest1-btn" class="col-6 pt-1 text-dark pointer">
+  			<i class="fas fa-dice-one fa-3x"></i>
+  		</a>
+
+  		<a id="quest2-btn" class="col-6 pt-1 text-dark pointer">
+  			<i class="fas fa-dice-two fa-3x"></i>
+  		</a>
+		</div>
+
+		<div class="row">
+  		<a id="quest3-btn" class="col-6 pt-1 text-dark pointer">
+  			<i class="fas fa-dice-three fa-3x"></i>
+  		</a>
+
+  		<a id="quest4-btn" class="col-6 pt-1 text-dark pointer">
+  			<i class="fas fa-dice-four fa-3x"></i>
+  		</a>
+		</div>
+
+		<button id="enviar" disabled onclick="gameOver()" class="concluir pt-2 btn btn-secondary">
+			<h4>Enviar</h4>
+		</button>
+	</div>
+
+  <%= link_to game_path, class: "btn btn-light btn-lg voltar" do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+
+	<div class="card card-tests mx-6 px-5 pt-5 pb-0 mt-4 shadow-lg">
+		<div class="card-head text-center">
+			<h3 class="card-title h1">
+				Teste <span id="testeId"><%= @teste.id %></span>
+			</h3>
+		</div>
+
+		<div class="card-body">
+  		<div id="quest1">
+  			<div class="quest">
+    			<h4>
+	    			<b>Questão 1:</b>
+	    			<%= @teste.questao1.texto %>
+    			</h4>
+  			</div>
+
+  			<div class="answers mt-5">
+  				<label id="btn-pergunta1resposta1" class="btn btn-block btn-secondary text-left" for="pergunta1resposta1">
+    				<h5 class="answer">
+    					<input id="pergunta1resposta1" onclick="question(1, 1)" type="radio" name="resposta1" value="1" class="d-none"><%= @teste.questao1.resposta1 %>
+    				</h5>
+  				</label>
+
+  				<label id="btn-pergunta1resposta2" class="btn btn-block btn-secondary text-left" for="pergunta1resposta2">
+    				<h5 class="answer">
+    					<input id="pergunta1resposta2" onclick="question(1, 2)" type="radio" name="resposta1" value="2" class="d-none"><%= @teste.questao1.resposta2 %>
+    				</h5>
+  				</label>
+
+  				<label id="btn-pergunta1resposta3" class="btn btn-block btn-secondary text-left" for="pergunta1resposta3">
+    				<h5 class="answer">
+    					<input id="pergunta1resposta3" onclick="question(1, 3)" type="radio" name="resposta1" value="3" class="d-none"><%= @teste.questao1.resposta3 %>
+    				</h5>
+    			</label>
+
+    			<label id="btn-pergunta1resposta4" class="btn btn-block btn-secondary text-left" for="pergunta1resposta4">
+    				<h5 class="answer">
+    					<input id="pergunta1resposta4" onclick="question(1, 4)" type="radio" name="resposta1" value="4" class="d-none"><%= @teste.questao1.resposta4 %>
+    				</h5>
+    			</label>
+  			</div>
+  		</div>
+
+  		<div class="d-none" id="quest2">
+  			<div class="quest">
+    			<h4>
+	    			<b>Questão 2:</b>
+	    			<%= @teste.questao2.texto %>
+    			</h4>
+  			</div>
+
+  			<div class="answers mt-5">
+  				<label id="btn-pergunta2resposta1" class="btn btn-block btn-secondary text-left" for="pergunta2resposta1">
+    				<h5 class="answer">
+    					<input id="pergunta2resposta1" onclick="question(2, 1)" type="radio" name="resposta2" value="1" class="d-none"><%= @teste.questao2.resposta1 %>
+    				</h5>
+  				</label>
+
+  				<label id="btn-pergunta2resposta2" class="btn btn-block btn-secondary text-left" for="pergunta2resposta2">
+    				<h5 class="answer">
+    					<input id="pergunta2resposta2" onclick="question(2, 2)" type="radio" name="resposta2" value="2" class="d-none"><%= @teste.questao2.resposta2 %>
+    				</h5>
+  				</label>
+
+  				<label id="btn-pergunta2resposta3" class="btn btn-block btn-secondary text-left" for="pergunta2resposta3">
+    				<h5 class="answer">
+    					<input id="pergunta2resposta3" onclick="question(2, 3)" type="radio" name="resposta2" value="3" class="d-none"><%= @teste.questao2.resposta3 %>
+    				</h5>
+    			</label>
+
+    			<label id="btn-pergunta2resposta4" class="btn btn-block btn-secondary text-left" for="pergunta2resposta4">
+    				<h5 class="answer">
+    					<input id="pergunta2resposta4" onclick="question(2, 4)" type="radio" name="resposta2" value="4" class="d-none"><%= @teste.questao2.resposta4 %>
+    				</h5>
+    			</label>
+  			</div>
+  		</div>
+
+  		<div class="d-none" id="quest3">
+  			<div class="quest">
+    			<h4>
+	    			<b>Questão 3:</b>
+	    			<%= @teste.questao3.texto %>
+    			</h4>
+  			</div>
+
+  			<div class="answers mt-5">
+  				<label id="btn-pergunta3resposta1" class="btn btn-block btn-secondary text-left" for="pergunta3resposta1">
+    				<h5 class="answer">
+    					<input id="pergunta3resposta1" onclick="question(3, 1)" type="radio" name="resposta3" value="1" class="d-none"><%= @teste.questao3.resposta1 %>
+    				</h5>
+  				</label>
+
+  				<label id="btn-pergunta3resposta2" class="btn btn-block btn-secondary text-left" for="pergunta3resposta2">
+    				<h5 class="answer">
+    					<input id="pergunta3resposta2" onclick="question(3, 2)" type="radio" name="resposta3" value="2" class="d-none"><%= @teste.questao3.resposta2 %>
+    				</h5>
+  				</label>
+
+  				<label id="btn-pergunta3resposta3" class="btn btn-block btn-secondary text-left" for="pergunta3resposta3">
+    				<h5 class="answer">
+    					<input id="pergunta3resposta3" onclick="question(3, 3)" type="radio" name="resposta3" value="3" class="d-none"><%= @teste.questao3.resposta3 %>
+    				</h5>
+    			</label>
+
+    			<label id="btn-pergunta3resposta4" class="btn btn-block btn-secondary text-left" for="pergunta3resposta4">
+    				<h5 class="answer">
+    					<input id="pergunta3resposta4" onclick="question(3, 4)" type="radio" name="resposta3" value="5" class="d-none"><%= @teste.questao3.resposta4 %>
+    				</h5>
+    			</label>
+  			</div>
+  		</div>
+
+  		<div class="d-none" id="quest4">
+  			<div class="quest">
+    			<h4>
+	    			<b>Questão 4:</b>
+	    			<%= @teste.questao4.texto %>
+    			</h4>
+  			</div>
+
+  			<div class="answers mt-5">
+  				<label id="btn-pergunta4resposta1" class="btn btn-block btn-secondary text-left" for="pergunta4resposta1">
+    				<h5 class="answer">
+    					<input id="pergunta4resposta1" onclick="question(4, 1)" type="radio" name="resposta4" value="1" class="d-none"><%= @teste.questao4.resposta1 %>
+    				</h5>
+  				</label>
+
+  				<label id="btn-pergunta4resposta2" class="btn btn-block btn-secondary text-left" for="pergunta4resposta2">
+    				<h5 class="answer">
+    					<input id="pergunta4resposta2" onclick="question(4, 2)" type="radio" name="resposta4" value="2" class="d-none"><%= @teste.questao4.resposta2 %>
+    				</h5>
+  				</label>
+
+  				<label id="btn-pergunta4resposta3" class="btn btn-block btn-secondary text-left" for="pergunta4resposta3">
+    				<h5 class="answer">
+    					<input id="pergunta4resposta3" onclick="question(4, 3)" type="radio" name="resposta4" value="3" class="d-none"><%= @teste.questao4.resposta3 %>
+    				</h5>
+    			</label>
+
+    			<label id="btn-pergunta4resposta4" class="btn btn-block btn-secondary text-left" for="pergunta4resposta4">
+    				<h5 class="answer">
+    					<input id="pergunta4resposta4" onclick="question(4, 4)" type="radio" name="resposta4" value="4" class="d-none" value=""><%= @teste.questao4.resposta4 %>
+    				</h5>
+    			</label>
+  			</div>
+  		</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	$(".container").addClass("no-container");
+  user_id = <%= current_user.id %>;
+  player_id = <%= Player.where(user: current_user)[0].id %>;
+  area = "<%= Pergunta.find(@teste.questao1).area %>";
+  answers = [<%= @teste.questao1.resposta_correta %>, <%= @teste.questao2.resposta_correta %>, <%= @teste.questao3.resposta_correta %>, <%= @teste.questao4.resposta_correta %>];
+
+  dataPlayer = <%= @player_json %>;
+  $(document).ready(function() {
+		pagination();
+		cronometro(4, 0);
+	});
+</script>

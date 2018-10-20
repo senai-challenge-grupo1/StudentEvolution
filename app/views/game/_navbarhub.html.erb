@@ -16,7 +16,7 @@
 			</div>
 		</div>
 
-		<div class="progress-container ml-auto mr-3">
+		<div class="progress-container ml-auto mr-4">
 			<span class="px-2 text-white text-shadow-black">XP</span>
 
 			<div id="xp" class="bar bar-horizontal bar-5">
@@ -24,8 +24,11 @@
 			</div>
 		</div>
 
-		<div class="profile-container text-white text-center">
-			<button class="btn btn-sm icon-circle bg-white"><i class="fas fa-user fa-2x"></i></button>
+		<div class="profile-container text-white text-center mr-2">
+			<!-- <button class="btn btn-sm icon-circle bg-white"><i class="fas fa-user fa-2x"></i></button> -->
+			<div class="box">
+				<%= current_user.nome %>
+			</div>
 
 			<div class="px-3">
 				<span class="text-shadow-black">Nível: </span>

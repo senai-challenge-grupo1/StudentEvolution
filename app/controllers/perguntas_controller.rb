@@ -5,6 +5,10 @@ class PerguntasController < ApplicationController
   # GET /perguntas
   # GET /perguntas.json
   def index
+    unless current_user.admin
+      redirect_to home_path
+    end
+
     @perguntas = Pergunta.all
     @perguntas.each do |pergunta|
       case pergunta.area
@@ -23,6 +27,10 @@ class PerguntasController < ApplicationController
   # GET /perguntas/1
   # GET /perguntas/1.json
   def show
+    unless current_user.admin
+      redirect_to home_path
+    end
+
     case @pergunta.area
       when "ce"
         @pergunta.area = "Ciências Exatas"
@@ -38,22 +46,24 @@ class PerguntasController < ApplicationController
   # GET /perguntas/new
   def new
     @pergunta = Pergunta.new
-    @pergunta.aprovada = true
   end
 
   # GET /perguntas/1/edit
   def edit
+    unless current_user.admin
+      redirect_to home_path
+    end
   end
 
   # POST /perguntas
   # POST /perguntas.json
   def create
     @pergunta = Pergunta.new(pergunta_params)
-    # @pergunta.user = current_user
+    @pergunta.aprovada = current_user.admin
 
     respond_to do |format|
       if @pergunta.save
-        format.html { redirect_to @pergunta, notice: 'Pergunta was successfully created.' }
+        format.html { redirect_to perguntas_path }
         format.json { render :show, status: :created, location: @pergunta }
       else
         format.html { render :new }
@@ -65,10 +75,19 @@ class PerguntasController < ApplicationController
   # PATCH/PUT /perguntas/1
   # PATCH/PUT /perguntas/1.json
   def update
+    unless current_user.admin
+      redirect_to home_path
+    end
+
     respond_to do |format|
       if @pergunta.update(pergunta_params)
-        format.html { redirect_to @pergunta, notice: 'Pergunta was successfully updated.' }
-        format.json { render :show, status: :ok, location: @pergunta }
+        if current_user.admin
+          format.html { redirect_to perguntas_path }
+          format.json { render :show, status: :ok, location: @pergunta }
+        else
+          format.html { redirect_to home_path }
+          format.json { render :show, status: :ok, location: @pergunta }
+        end
       else
         format.html { render :edit }
         format.json { render json: @pergunta.errors, status: :unprocessable_entity }
@@ -79,6 +98,10 @@ class PerguntasController < ApplicationController
   # DELETE /perguntas/1
   # DELETE /perguntas/1.json
   def destroy
+    unless current_user.admin
+      redirect_to home_path
+    end
+
     @pergunta.destroy
     respond_to do |format|
       format.html { redirect_to perguntas_url, notice: 'Pergunta was successfully destroyed.' }

@@ -13,13 +13,13 @@
         <p class="mb-3 h4"><%= link_to "Registrar-se", new_user_registration_path, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
       <% end %>
 
-      <p class="mb-2 h5"><%= link_to "Ranking", new_user_session_path, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
-      <% if current_user %>
-        <p class="mb-2 h5"><%= link_to "Sugestão de perguntas", new_user_registration_path, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
+      <p class="mb-2 h5"><%= link_to "Ranking", ranking_path, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
+      <% if current_user and current_user.admin %>
+        <p class="mb-2 h5"><%= link_to "Cadastro de perguntas", perguntas_path, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
+      <% elsif current_user %>
+        <p class="mb-2 h5"><%= link_to "Sugestão de perguntas", new_pergunta_path, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
       <% end %>
-      <p class="mb-2 h5"><%= link_to "Sobre", new_user_session_path, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
-      <p class="mb-2 h5"><%= link_to "Ajuda", new_user_registration_path, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
-
+      
       <% if current_user %>
         <p class="h5"><%= link_to "Sair", destroy_user_session_path, method: :delete, class: "text-light shadow-0 hvr-wobble-horizontal" %></p>
       <% end %>

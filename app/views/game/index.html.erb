@@ -1,6 +1,10 @@
 <section>
   <%= render "navbarhub" %>
 
+  <%= link_to home_path, class: "btn btn-light btn-lg voltar" do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+
   <div class="sidebar pl-3 text-left">
   	<h4 class="my-3">
   		<b>Progressos do nível</b>
@@ -46,7 +50,6 @@
   		</div>
 
   		<div class="subject-body">
-
   		</div>
   	</div>
 
@@ -105,4 +108,8 @@
 <script type="text/javascript">
   $(".container").addClass("no-container");
   $(".subject-container").click(function(){redirect(this.id)});
+
+  player_id = <%= @player.id %>;
+  dataPlayer = <%= @player_json %>;
+  update();
 </script>

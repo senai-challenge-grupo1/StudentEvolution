@@ -1,6 +1,10 @@
 <section>
   <%= render "navbarhub" %>
 
+  <%= link_to game_path, class: "btn btn-light btn-lg voltar" do %>
+  	<i class="fas fa-arrow-left"></i>
+  <% end %>
+
   <div class="sidebar sidebar-vertical pl-4 text-center">
   	<div class="progress-container ml-auto mr-3 mt-2">
 			<span class="ce-span">Progresso:</span> <span id="ce-percent">0</span>%
@@ -25,15 +29,18 @@
 					<div class="row">
 				<% end %>
 
-					<div id="teste<%= teste.id %>" class="<% if index % 2 != 0 %>offset-2 <% end %>col-5 card <% if teste.acertos == 4 %>finish <% end %>p-3 mb-4 shadow text-center">
+				<% @classe = "col-5 card p-3 mb-4 shadow text-center" %>
+				<% if index % 2 != 0
+					@classe += " offset-2"
+				end %>
+				<% if teste.acertos == 4
+					@classe += " finish"
+				end %>
+				<%= link_to game_ce_test_path(teste.id), id: "teste"+teste.id.to_s, class: @classe do %>
 						<div class="card-head">
 							<h3 id="teste-titulo" class="card-title h5"><b>Teste <%= teste.id %></b></h3>
 						</div>
-
-						<div class="card-body">
-							Progresso do teste: <span id="teste-percentual"><%= 25 * teste.acertos %></span>%
-						</div>
-					</div>
+				<% end %>
 
 				<% if index % 2 != 0 %>
 					</div>
@@ -45,4 +52,8 @@
 
 <script type="text/javascript">
   $(".container").addClass("no-container");
+
+  player_id = <%= @player.id %>;
+  dataPlayer = <%= @player_json %>;
+  update();
 </script>

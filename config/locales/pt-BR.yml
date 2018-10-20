@@ -286,8 +286,8 @@ pt-BR:
     actions:
       dashboard:
         title: Administração do site
-        menu: Dashboard
-        breadcrumb: Dashboard
+        menu: Painel de controle
+        breadcrumb: Painel de controle
       index:
         title: Lista de %{model_label_plural}
         menu: Listar
@@ -327,6 +327,13 @@ pt-BR:
         breadcrumb: Exportar
         link: Exportar %{model_label_plural}
         bulk_link: Exportar %{model_label_plural} selecionados
+        done: Exportado
+      import:
+        title: Importar %{model_label_plural}
+        menu: Importar
+        breadcrumb: Importar
+        link: Importar %{model_label_plural}
+        bulk_link: Importar %{model_label_plural} selecionados
         done: Exportado
       history_index:
         title: Histórico para %{model_label_plural}
@@ -372,3 +379,22 @@ pt-BR:
         default_col_sep: ","
         col_sep: Separador de coluna
         col_sep_help: Deixe em branco para utilizar o padrão ('%{value}') # value is default_col_sep
+    import:
+      legend:
+        fields: Campos
+        upload: Enviar
+      model_fields: Campos padrão
+      help:
+        model_fields: Campos padrão
+        file_limit: Arquivos limite (%{limit})
+        encoding: Codificação
+        update_if_exists: Atualizar caso exista
+        chose_all: Escolher todos
+        clear_all: Remover todos
+      file: Arquivo
+      encoding: Codificação
+      update_if_exists: Atualizar caso exista
+      update_lookup: Atualizar pesquisa
+      invalid_format: Formato inválido
+      select_all_fields: Selecionar todos os campos
+      empty_value_for_associated_objects: "<vazio>"
