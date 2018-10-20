@@ -8,9 +8,6 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.7'
 
-# Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.6.0'
-
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 
@@ -51,6 +48,14 @@ gem "rails_admin_import", "~> 2.1"
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+
+	# Use mysql as the database for Active Record
+	gem 'mysql2', '>= 0.3.18', '< 0.6.0'
+end
+
+group :production do
+	# PostgreSQL
+	gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
