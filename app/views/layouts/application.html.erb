@@ -15,5 +15,19 @@
   	<div class="container">
     	<%= yield %>
   	</div>
+    <div id="lvUp" class="card col-6 mx-auto mt-5 pt-4 text-center b-5">
+      <div class="card-head">
+        <h3 class="card-title">Parabéns!</h3>
+      </div>
+
+      <div class="card-body">
+        <p>Você chegou ao nível <span id="newLv">2</span>.</p>
+        <p>Seu progresso em todas as áreas e sua experiência foram zerados.</p>
+        <button onclick="$('#lvUp').hide();" class="btn btn-light b-1">Fechar</button>
+      </div>
+    </div>
   </body>
 </html>
+<script>
+  $("#lvUp").hide();
+</script>

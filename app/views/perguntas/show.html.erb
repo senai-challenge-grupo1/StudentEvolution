@@ -1,54 +1,62 @@
-<p id="notice"><%= notice %></p>
+<div class="card card-school text-white mt-3 mb-3 px-5 pt-3 pb-1">
+  <div class="card-head">
+    <h1 class="card-title">Pergunta</h1>
+  </div>
+  <div class="card-body">
+    <p id="notice"><%= notice %></p>
+    
+    <p>
+      <strong>Area:</strong>
+      <%= @pergunta.area %>
+    </p>
 
-<p>
-  <strong>Area:</strong>
-  <%= @pergunta.area %>
-</p>
+    <p>
+      <strong>Nível:</strong>
+      <%= @pergunta.nivel %>
+    </p>
 
-<p>
-  <strong>Nivel:</strong>
-  <%= @pergunta.nivel %>
-</p>
+    <p>
+      <strong>Texto:</strong>
+      <%= @pergunta.texto %>
+    </p>
 
-<p>
-  <strong>Texto:</strong>
-  <%= @pergunta.texto %>
-</p>
+    <p>
+      <strong>Resposta 1:</strong>
+      <%= @pergunta.resposta1 %>
+    </p>
 
-<p>
-  <strong>Resposta1:</strong>
-  <%= @pergunta.resposta1 %>
-</p>
+    <p>
+      <strong>Resposta 2:</strong>
+      <%= @pergunta.resposta2 %>
+    </p>
 
-<p>
-  <strong>Resposta2:</strong>
-  <%= @pergunta.resposta2 %>
-</p>
+    <p>
+      <strong>Resposta 3:</strong>
+      <%= @pergunta.resposta3 %>
+    </p>
 
-<p>
-  <strong>Resposta3:</strong>
-  <%= @pergunta.resposta3 %>
-</p>
+    <p>
+      <strong>Resposta 4:</strong>
+      <%= @pergunta.resposta4 %>
+    </p>
 
-<p>
-  <strong>Resposta4:</strong>
-  <%= @pergunta.resposta4 %>
-</p>
+    <p>
+      <strong>Resposta correta:</strong>
+      <%= @pergunta.resposta_correta %>
+    </p>
 
-<p>
-  <strong>Resposta correta:</strong>
-  <%= @pergunta.resposta_correta %>
-</p>
+    <p>
+      <strong>Pergunta aprovada:</strong>
+      <% if @pergunta.aprovada %>
+        <i class="fas fa-check text-success icon-border"></i>
+      <% else %>
+        <i class="fas fa-times text-danger icon-border"></i>
+      <% end %>
+    </p>
 
-<p>
-  <strong>Aprovada:</strong>
-  <%= @pergunta.aprovada %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @pergunta.User %>
-</p>
-
-<%= link_to 'Edit', edit_pergunta_path(@pergunta) %> |
-<%= link_to 'Back', perguntas_path %>
+    <div class="shared row">
+      <%= link_to 'Voltar', perguntas_path, class: "btn btn-dark hvr-wobble-horizontal" %>
+      <%= link_to 'Editar', edit_pergunta_path(@pergunta), class: "btn btn-dark hvr-wobble-horizontal ml-auto" %>
+    </div>
+  </div>
+</div>

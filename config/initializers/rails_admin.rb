@@ -2,11 +2,14 @@ RailsAdmin.config do |config|
 
   ### Popular gems integration
 
-  ## == Devise ==
-  # config.authenticate_with do
-  #   warden.authenticate! scope: :user
-  # end
-  # config.current_user_method(&:current_user)
+  # == Devise ==
+  config.parent_controller = "::ApplicationController"
+
+  config.authenticate_with do |controller|
+    unless current_user and current_user.admin?
+      redirect_to main_app.root_path
+    end
+  end
 
   ## == Cancan ==
   # config.authorize_with :cancan
@@ -28,6 +31,7 @@ RailsAdmin.config do |config|
     index                         # mandatory
     new
     export
+    import
     bulk_delete
     show
     edit

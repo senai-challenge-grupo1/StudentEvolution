@@ -1,6 +1,6 @@
-<section class="pt-5">
+<section class="pt-3">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <div class="card card-school text-white col-12 col-sm-10 offset-sm-1 p-2 pt-5 shadow-lg">
+    <div class="card card-school text-white col-12 col-sm-10 offset-sm-1 px-2 pt-5">
       <div class="card-head">
         <h3 class="text-center">Editar perfil de <%= resource.nome.to_s.humanize %></h3>
       </div>
@@ -19,13 +19,32 @@
         <div class="form-actions mt-3">
           <%= f.button :submit, "Atualizar", class: "btn btn-dark hvr-wobble-horizontal" %>
         </div>
+
+        <h3>Apagar minha conta</h3>
+
+        <p><%= button_to "Deletar conta", registration_path(resource_name), data: { confirm: "Tem certeza?" }, method: :delete %></p>
+
+        <div class="shared">
+          <%= link_to "Voltar", :back %>
+        </div>
       </div>
     </div>
   <% end %>
-
-  <h3>Cancelar minha conta</h3>
-
-  <p><%= button_to "Deletar conta", registration_path(resource_name), data: { confirm: "Tem certeza?" }, method: :delete %></p>
-
-  <%= link_to "Voltar", :back %>
 </section>
+
+<% if alert %>
+  <div class="card card-error shadow-xl">
+    <div class="card-body">
+      <%= alert %>
+    </div>
+
+    <div class="close">
+      <i class="fas fa-times"></i>
+    </div>
+  </div>
+
+  <script>
+    error();
+  </script>
+<% end %>
+

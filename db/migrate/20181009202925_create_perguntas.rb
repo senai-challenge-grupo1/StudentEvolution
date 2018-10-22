@@ -10,7 +10,6 @@ class CreatePerguntas < ActiveRecord::Migration[5.0]
       t.string :resposta4
       t.integer :resposta_correta
       t.boolean :aprovada
-      t.belongs_to :User, foreign_key: true
 
       t.timestamps
     end

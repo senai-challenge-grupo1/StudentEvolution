@@ -1,0 +1,12 @@
+<div class="card card-school text-white mt-3 mb-3 px-5 pt-3 pb-1">
+  <div class="card-head">
+    <h1 class="card-title">Cadastrar player</h1>
+  </div>
+  
+  <div class="card-body">
+  	<p id="notice"><%= notice %></p>
+  	
+		<%= render 'form', player: @player %>
+  </div>
+  <%= link_to 'Voltar', players_path, class: "text-white" %>
+</div>

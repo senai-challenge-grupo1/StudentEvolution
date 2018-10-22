@@ -19,3 +19,20 @@
     </div>
   <% end %>
 </section>
+
+<% if alert %>
+  <div class="card card-error shadow-xl">
+    <div class="card-body">
+      <%= alert %>
+    </div>
+
+    <div class="close">
+      <i class="fas fa-times"></i>
+    </div>
+  </div>
+
+  <script>
+    error();
+  </script>
+<% end %>
+

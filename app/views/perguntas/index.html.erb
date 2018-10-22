@@ -1,9 +1,10 @@
-<p id="notice"><%= notice %></p>
 <div class="card card-school text-white mt-3 mb-3 px-5 pt-3 pb-1 shadow-lg">
   <div class="card-head">
     <h1 class="card-title">Perguntas</h1>
   </div>
   <div class="card-body">
+    <p id="notice"><%= notice %></p>
+    
     <table class="table table-striped table-bordered" style="width:100%">
       <thead>
         <tr>
@@ -20,11 +21,15 @@
           <tr>
             <td><%= pergunta.area %></td>
             <td><%= pergunta.nivel %></td>
-            <td><%= pergunta.texto %></td>
-            <td><%= pergunta.aprovada %></td>
-            <td><%= link_to 'Ver', pergunta %></td>
-            <td><%= link_to 'Editar', edit_pergunta_path(pergunta) %></td>
-            <td><%= link_to 'Apagar', pergunta, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+            <td><%= truncate(pergunta.texto, {length: 20}) %></td>
+            <% if pergunta.aprovada %>
+              <td>Sim</td>
+            <% else %>
+              <td>Não</td>
+            <% end %>
+            <td><%= link_to pergunta do %><i class="fas fa-info text-white icon-circle"></i><% end %></td>
+            <td><%= link_to edit_pergunta_path(pergunta) do %><i class="fas fa-pen text-white icon-circle"></i><% end %></td>
+            <td><%= link_to pergunta, method: :delete, data: { confirm: 'Você tem certeza?' } do %><i class="fas fa-times text-white icon-circle"></i><% end %></td>
           </tr>
         <% end %>
       </tbody>

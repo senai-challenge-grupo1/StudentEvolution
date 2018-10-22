@@ -1,0 +1,39 @@
+<section class="pt-5">
+	<%= link_to home_path, class: "btn btn-light btn-lg voltar" do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+	
+  <div class="card card-school p-3 pt-5 mt-5 offset-2 col-8 text-center text-light">
+    <div class="card-head">
+      <h1 class="card-title">Ranking</h1>
+    </div>
+
+    <div class="card-body table-responsive-sm">
+    	<table class="table table-bordered">
+    		<thead>
+	    		<tr>
+	    			<th class="col-auto">Posição</th>
+	    			<th class="col">Usuário</th>
+	    			<th class="col">Pontuação</th>
+	    		</tr>
+    		</thead>
+
+    		<tbody>
+    			<% @count = 0 %>
+    			<% @tmp = 0 %>
+    			<% @players.each do |p| %>
+    				<% if p.score != @temp %>
+    					<% @count += 1 %>
+    				<% end %>
+	    			<tr>
+	    				<td><%= @count %>º</td>
+	    				<td><%= p.user.nome %></td>
+	    				<td><%= p.score %></td>
+	    			</tr>
+	    			<% @tmp = @score %>
+    			<% end %>
+    		</tbody>
+    	</table>
+    </div>
+  </div>
+</section>
