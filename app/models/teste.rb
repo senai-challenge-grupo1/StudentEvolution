@@ -5,7 +5,7 @@ class Teste
   end
 
   def make(area)
-    @perguntas = Pergunta.where(area: area).order(:id)
+    @perguntas = Pergunta.where(area: area, aprovada: true).order(:id)
     @perguntas.each do |pergunta|
       case pergunta.area
         when "ce"

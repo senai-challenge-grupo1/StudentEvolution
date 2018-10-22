@@ -15,7 +15,7 @@ class GameController < ApplicationController
 
 	def ce
 		@tests = []
-		@perguntas = Pergunta.where(area: "ce")
+		@perguntas = Pergunta.where(area: "ce", aprovada: true)
 		@qtd = Integer(@perguntas.count / 4)
 
 		for i in 1..@qtd
@@ -39,7 +39,7 @@ class GameController < ApplicationController
 
 	def ch
 		@tests = []
-		@perguntas = Pergunta.where(area: "ch")
+		@perguntas = Pergunta.where(area: "ch", aprovada: true)
 		@qtd = Integer(@perguntas.count / 4)
 
 		for i in 1..@qtd
@@ -63,7 +63,7 @@ class GameController < ApplicationController
 
 	def cb
 		@tests = []
-		@perguntas = Pergunta.where(area: "cb")
+		@perguntas = Pergunta.where(area: "cb", aprovada: true)
 		@qtd = Integer(@perguntas.count / 4)
 
 		for i in 1..@qtd
@@ -87,7 +87,7 @@ class GameController < ApplicationController
 
 	def lc
 		@tests = []
-		@perguntas = Pergunta.where(area: "lc")
+		@perguntas = Pergunta.where(area: "lc", aprovada: true)
 		@qtd = Integer(@perguntas.count / 4)
 
 		for i in 1..@qtd
