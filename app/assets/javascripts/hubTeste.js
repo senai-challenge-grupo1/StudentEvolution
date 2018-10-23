@@ -17,5 +17,3 @@ class Teste {
 		}
 	}
 }
-
-var teste = new Teste("teste2", "Teste 1");

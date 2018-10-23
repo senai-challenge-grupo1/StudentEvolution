@@ -2,6 +2,7 @@ pt-BR:
   simple_form:
     "yes": 'Sim'
     "no": 'Não'
+    
     required:
       text: 'Obrigatório'
       mark: '*'
@@ -10,14 +11,21 @@ pt-BR:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Alguns erros foram encontrados, por favor verifique:"
-    # Labels and hints examples
-    # labels:
-    #   password: 'Senha'
-    #   user:
-    #     new:
-    #       email: 'E-mail para efetuar o login.'
-    #     edit:
-    #       email: 'E-mail.'
-    # hints:
-    #   username: 'Nome de usuário para efetuar o login.'
-    #   password: 'Por favor, sem caracteres especiais.'
+
+    # Labels
+    labels:
+      password: 'Senha:'
+      password_confirmation: 'Confirmar senha:'
+      current_password: 'Senha atual:'
+      nome: 'Nome:'
+      login: 'Login:'
+      email: 'E-mail:'
+      data_nascimento: 'Data de nascimento:'
+
+    # Hints
+    hints:
+      user:
+        edit:
+          password: 'Deixe em branco caso não queira alterar.'
+          password_confirmation: 'Deixe em branco caso não queira alterar.'
+          current_password: 'Precisamos de sua senha atual para confirmar as alterações.'

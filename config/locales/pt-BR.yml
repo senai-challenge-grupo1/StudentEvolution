@@ -329,12 +329,12 @@ pt-BR:
         bulk_link: Exportar %{model_label_plural} selecionados
         done: Exportado
       import:
-        title: Importar %{model_label_plural}
-        menu: Importar
-        breadcrumb: Importar
-        link: Importar %{model_label_plural}
-        bulk_link: Importar %{model_label_plural} selecionados
-        done: Exportado
+        title: "Importar"
+        menu: "Importar"
+        breadcrumb: "Importar"
+        link: "Importar"
+        bulk_link: "Importar"
+        done: "Importado"
       history_index:
         title: Histórico para %{model_label_plural}
         menu: Histórico
@@ -380,21 +380,40 @@ pt-BR:
         col_sep: Separador de coluna
         col_sep_help: Deixe em branco para utilizar o padrão ('%{value}') # value is default_col_sep
     import:
+      model_fields: "Campos modelo"
+      association_fields: "Campos associados"
+      file: "Arquivo de dados"
+      missing_file: "Você deve selecionar um arquivo"
+      format: "Formado do arquivo"
+      invalid_format: "Formato de importação inválido."
+      missing_update_lookup: "Seu arquivo deve conter uma coluna para poder 'Atualizar a pesquisa por campo' que você selecionar."
+      invalid_json: "Os dados JSON devem estar em formato de array ou um objeto com uma chave '%{root_key}' atribuída a um conjunto de arrays"
+      update_if_exists: "Atualizar se existir"
+      update_lookup: "Atualizar a pesquisa por campo(s)"
+      mapping: "mapeando"
+      encoding: "Codificação"
       legend:
-        fields: Campos
-        upload: Enviar
-      model_fields: Campos padrão
+        fields: "Campos a serem importados"
+        upload: "Enviar arquivo"
+        mapping: "Mapeando campos relacionados"
+      import_success:
+        create: "Criado %{name}"
+        update: "Atualizado %{name}"
+      import_error:
+        create: "Falha ao criar %{name}: %{error}"
+        update: "Falha ao atualizar %{name}: %{error}"
+        general: "Erro durante a importação: %{error}"
+        line_item_limit: "Por favor, limite a quantidade de itens por linha em %{limit} itens."
+        old_import_hook: >
+          O método de importação %{model}.%{method} deve ter apenas 1 argumento.
+          Os dados não foram corretamente importados.
+          Veja a sessão de atualização no 'readme' do 'Rails Admin Import'.
+      association_not_found: "Associação não encontrada. %{error}"
       help:
-        model_fields: Campos padrão
-        file_limit: Arquivos limite (%{limit})
-        encoding: Codificação
-        update_if_exists: Atualizar caso exista
-        chose_all: Escolher todos
-        clear_all: Remover todos
-      file: Arquivo
-      encoding: Codificação
-      update_if_exists: Atualizar caso exista
-      update_lookup: Atualizar pesquisa
-      invalid_format: Formato inválido
-      select_all_fields: Selecionar todos os campos
-      empty_value_for_associated_objects: "<vazio>"
+        model_fields: "Os seguintes campos devem ser incluídos no arquivo de importação."
+        association_fields: >
+          O mapeamento desses campos, para outras tabelas da base de dados, serão pesquisados através dos atributos selecionados abaixo.
+          Para múltiplas associações, você deve incluir múltiplas colunas com o mesmo cabeçalho no arquivo CSV.
+        update_if_exists: "Atualizar campos registrados com o campo pesquisado abaixo, ao invés de criar novos registros"
+        file_limit: "Por favor, limite a quantidade de itens por linha em %{limit} itens."
+        encoding: "Escolha a codificação do arquivo. Deixe vázio para auto-detectar. Ignore para arquivos JSON."
