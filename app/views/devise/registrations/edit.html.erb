@@ -1,35 +1,34 @@
 <section class="pt-3">
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <div class="card card-school text-white col-12 col-sm-10 offset-sm-1 px-2 pt-5">
-      <div class="card-head">
-        <h3 class="text-center">Editar perfil de <%= resource.nome.to_s.humanize %></h3>
-      </div>
+  <div class="card card-school text-white col-12 col-sm-10 offset-sm-1 px-2 pt-5">
+    <div class="card-head">
+      <h3 class="text-center">Editar perfil de <%= resource.nome.to_s.humanize %></h3>
+    </div>
 
-      <div class="card-body pt-0">
+    <div class="card-body pt-0">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :nome, label: "Nome:", autofocus: true %>
-          <%= f.input :login, label: "Login:" %>
-          <%= f.input :email, label: "E-mail:" %>
-          <%= f.input :data_nascimento, as: :date, label: "Data de nascimento:", order: [:day, :month, :year] %>
-          <%= f.input :current_password, label: "Senha atual:", hint: "Precisamos de sua senha atual para confirmar as alterações" %>
+          <%= f.input :nome, label: "Nome:", autofocus: true, required: true %>
+          <%= f.input :login, label: "Login:", required: true %>
+          <%= f.input :email, label: "E-mail:", required: true %>
+          <%= f.input :data_nascimento, as: :date, label: "Data de nascimento:", order: [:day, :month, :year], required: true %>
+          <%= f.input :current_password, label: "Senha atual:", hint: "Precisamos de sua senha atual para confirmar as alterações", required: true %>
         </div>
 
-        <div class="form-actions mt-3">
-          <%= f.button :submit, "Atualizar", class: "btn btn-dark hvr-wobble-horizontal" %>
+        <div class="shared form-actions mt-3 row px-3">
+          <%= link_to "Voltar", home_path, class: "btn btn-danger hvr-wobble-horizontal" %>
+          <%= f.button :submit, "Atualizar", class: "btn btn-dark hvr-wobble-horizontal ml-auto" %>
         </div>
+      <% end %>
 
-        <h3>Apagar minha conta</h3>
+      <hr class="bg-light">
 
-        <p><%= button_to "Deletar conta", registration_path(resource_name), data: { confirm: "Tem certeza?" }, method: :delete %></p>
+      <h3 class="mt-3">Apagar minha conta</h3>
 
-        <div class="shared">
-          <%= link_to "Voltar", :back %>
-        </div>
-      </div>
+      <p><%= link_to "Deletar conta", registration_path(resource_name), data: { confirm: "Tem certeza?" }, method: :delete, class: "btn btn-dark hvr-wobble-horizontal" %></p>
     </div>
-  <% end %>
+  </div>
 </section>
 
 <% if alert %>
