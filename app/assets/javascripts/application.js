@@ -316,97 +316,49 @@ function gameOver() {
 	let temp;
 	switch(area) {
     case "ce":
-    	xp = dataPlayer.xp;
-
-    	temp = (100 - dataPlayer.ce) / 100;
-  		xp = progress / 4 * temp;
-  		xp += dataPlayer.xp;
-
     	if(dataPlayer.ce + progress <= 100) {
 				progress += dataPlayer.ce;
     	} else {
     		progress = 100;
     	}
 
-    	if(xp > 100) {
-    		xp = 100;
-    	}
-
-    	if(xp % 25 != 0) {
-    		xp++;
-    	}
+    	xp = (progress + dataPlayer.ch + dataPlayer.cb + dataPlayer.lc) / 4;
 
     	data = {score: score, ce: progress, xp: xp, stress: stress, bored: bored}
     	break;
 
     case "ch":
-    	xp = dataPlayer.xp;
-
-    	temp = (100 - dataPlayer.ch) / 100;
-  		xp = progress / 4 * temp;
-  		xp += dataPlayer.xp;
-
     	if(dataPlayer.ch + progress <= 100) {
 				progress += dataPlayer.ch;
     	} else {
     		progress = 100;
     	}
 
-    	if(xp > 100) {
-    		xp = 100;
-    	}
-
-    	if(xp % 25 != 0) {
-    		xp++;
-    	}
+    	xp = (dataPlayer.ce + progress + dataPlayer.cb + dataPlayer.lc) / 4;
 
     	data = {score: score, ch: progress, xp: xp, stress: stress, bored: bored}
     	break;
 
     case "cb":
-    	xp = dataPlayer.xp;
-
-    	temp = (100 - dataPlayer.cb) / 100;
-  		xp = progress / 4 * temp;
-  		xp += dataPlayer.xp;
-
     	if(dataPlayer.cb + progress <= 100) {
 				progress += dataPlayer.cb;
     	} else {
     		progress = 100;
     	}
 
-    	if(xp > 100) {
-    		xp = 100;
-    	}
-
-    	if(xp % 25 != 0) {
-    		xp += 2;
-    	}
+    	xp = (dataPlayer.ce + dataPlayer.ch + progress + dataPlayer.lc) / 4;
 
     	data = {score: score, cb: progress, xp: xp, stress: stress, bored: bored}
     	break;
 
     case "lc":
-    	xp = dataPlayer.xp;
-
-    	temp = (100 - dataPlayer.lc) / 100;
-  		xp = progress / 4 * temp;
-  		xp += dataPlayer.xp;
-
     	if(dataPlayer.lc + progress <= 100) {
 				progress += dataPlayer.lc;
     	} else {
     		progress = 100;
     	}
 
-    	if(xp > 100) {
-    		xp = 100;
-    	}
-
-    	if(xp % 25 != 0) {
-    		xp++;
-    	}
+    	xp = (dataPlayer.ce + dataPlayer.ch + dataPlayer.cb + progress) / 4;
 
     	data = {score: score, lc: progress, xp: xp, stress: stress, bored: bored}
     	break;
