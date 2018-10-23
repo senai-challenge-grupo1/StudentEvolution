@@ -526,6 +526,7 @@ input:-webkit-autofill:focus {
 
 .answers label {
 	transition: all 0.5s;
+	white-space: normal !important;
 }
 
 .pointer {
