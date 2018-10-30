@@ -63,7 +63,7 @@ class PerguntasController < ApplicationController
 
     respond_to do |format|
       if @pergunta.save
-        format.html { redirect_to perguntas_path }
+        format.html { redirect_to new_pergunta_path }
         format.json { render :show, status: :created, location: @pergunta }
       else
         format.html { render :new }
