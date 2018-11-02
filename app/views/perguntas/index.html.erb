@@ -1,39 +1,65 @@
-<div class="card card-school text-white mt-3 mb-3 px-5 pt-3 pb-1 shadow-lg">
+<div class="card card-school text-white mt-3 mb-3 px-3 px-md-5 pt-md-3 pb-1 shadow-lg">
   <div class="card-head">
     <h1 class="card-title">Perguntas</h1>
   </div>
-  <div class="card-body">
+  <div class="card-body py-sm-0">
     <p id="notice"><%= notice %></p>
-    
-    <table class="table table-striped table-bordered" style="width:100%">
-      <thead>
-        <tr>
-          <th>Area</th>
-          <th>Nivel</th>
-          <th>Texto</th>
-          <th>Aprovada</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
 
-      <tbody>
-        <% @perguntas.each do |pergunta| %>
+    <div class="d-none d-md-block">
+      <table class="table table-striped table-bordered" style="width: 100%;">
+        <thead>
           <tr>
-            <td><%= pergunta.area %></td>
-            <td><%= pergunta.nivel %></td>
-            <td><%= truncate(pergunta.texto, {length: 20}) %></td>
-            <% if pergunta.aprovada %>
-              <td>Sim</td>
-            <% else %>
-              <td>Não</td>
-            <% end %>
-            <td><%= link_to pergunta do %><i class="fas fa-info text-white icon-circle"></i><% end %></td>
-            <td><%= link_to edit_pergunta_path(pergunta) do %><i class="fas fa-pen text-white icon-circle"></i><% end %></td>
-            <td><%= link_to pergunta, method: :delete, data: { confirm: 'Você tem certeza?' } do %><i class="fas fa-times text-white icon-circle"></i><% end %></td>
+            <th>Area</th>
+            <th>Nivel</th>
+            <th>Texto</th>
+            <th>Aprovada</th>
+            <th colspan="3"></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+
+        <tbody>
+          <% @perguntas.each do |pergunta| %>
+            <tr>
+              <td><%= pergunta.area %></td>
+              <td><%= pergunta.nivel %></td>
+              <td><%= truncate(pergunta.texto, {length: 20}) %></td>
+              <% if pergunta.aprovada %>
+                <td>Sim</td>
+              <% else %>
+                <td>Não</td>
+              <% end %>
+              <td><%= link_to pergunta do %><i class="fas fa-info text-white icon-circle"></i><% end %></td>
+              <td><%= link_to edit_pergunta_path(pergunta) do %><i class="fas fa-pen text-white icon-circle"></i><% end %></td>
+              <td><%= link_to pergunta, method: :delete, data: { confirm: 'Você tem certeza?' } do %><i class="fas fa-times text-white icon-circle"></i><% end %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="d-block d-md-none">
+      <table class="table table-striped table-bordered" style="width: 100%;">
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Texto</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @perguntas.each do |pergunta| %>
+            <tr>
+              <td><%= pergunta.area %></td>
+              <td><%= truncate(pergunta.texto, {length: 20}) %></td>
+              <td><%= link_to pergunta do %><i class="fas fa-info text-white icon-circle"></i><% end %></td>
+              <td><%= link_to edit_pergunta_path(pergunta) do %><i class="fas fa-pen text-white icon-circle"></i><% end %></td>
+              <td><%= link_to pergunta, method: :delete, data: { confirm: 'Você tem certeza?' } do %><i class="fas fa-times text-white icon-circle"></i><% end %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <%= link_to 'Cadastrar pergunta', new_pergunta_path, class: "text-white" %>
